@@ -12,23 +12,48 @@ Welcome to YouStock.AI, an advanced AI-powered personal assistant designed to he
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 
-## How to Access the Files
+## How to Access the Files 
 The project files are organized in a streamlined manner, allowing for easy navigation and access. We use Streamlit for the user interface, making it simple for users to interact with the application and access various functionalities. To get started with YouStock.AI, follow these steps:
 
-1. Clone the repository:
+1. **Clone the Repository**
+
+    ```bash
+    git clone https://github.com/Ankur2606/Algo-Trading-Youstock.git
+    cd Algo-Trading-Youstock
+    ```
+
+2. **Create a Virtual Environment**
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install Required Packages**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Setup GCP API Key**
+
+    Place your GCP API key JSON file in the `Streamlit_app` directory and name it `tts_pdf_reader_key.json`.
+
+5. **Add GCP API Key Path to the Code**
+
+    Navigate to `Streamlit_app/youStocks.py` and add the following line to set the GCP API key JSON file path:
+
+    ```python
+    import os
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Streamlit_app/tts_pdf_reader_key.json"
+    ```
+
+6. Launch the Streamlit application:
    ```bash
-   git clone https://github.com/harbingeroftrades/YouStock.AI.git
-   cd YouStock.AI
+   streamlit run Streamlit_app/youStocks.py
    ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Launch the Streamlit application:
-   ```bash
-   streamlit run youstock.py
-   ```
-4. Access the application through your web browser at `http://localhost:8501`.
+
+7. Access the application through your web browser at `http://localhost:8501`.
 
 
 For more detailed information, refer to the documentation within the repository. Happy investing!
@@ -144,30 +169,6 @@ Combine Fundamental and Technical Analysis with sentiment analysis to enhance st
   - `replicate`
   - `random`
   - `cufflinks`
-
-
-## Getting Started
-
-1. Clone the repository.
-   ```bash
-   git clone [repository_url]
-   
-2. Move into project directory.
-    ```bash
-    cd Real-Time-Market-Insights
-    cd Streamlit_app
-
-3. Create a Virtual Environment and install Requirements.
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate  (on windows)
-    source venv/bin/activate (on MAC)
-  
-    pip install -r requirements.txt
-
-4. Run Streamlit code.
-   ```bash
-   streamlit run youstock.py
 
 
 ## Development Phase

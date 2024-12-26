@@ -12,23 +12,48 @@ Welcome to YouStock.AI, an advanced AI-powered personal assistant designed to he
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
 
-## How to Access the Files
+## How to Access the Files 
 The project files are organized in a streamlined manner, allowing for easy navigation and access. We use Streamlit for the user interface, making it simple for users to interact with the application and access various functionalities. To get started with YouStock.AI, follow these steps:
 
-1. Clone the repository:
+1. **Clone the Repository**
+
+    ```bash
+    git clone https://github.com/Ankur2606/Algo-Trading-Youstock.git
+    cd Algo-Trading-Youstock
+    ```
+
+2. **Create a Virtual Environment**
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install Required Packages**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Setup GCP API Key**
+
+    Place your GCP API key JSON file in the `Streamlit_app` directory and name it `tts_pdf_reader_key.json`.
+
+5. **Add GCP API Key Path to the Code**
+
+    Navigate to `Streamlit_app/youStocks.py` and add the following line to set the GCP API key JSON file path:
+
+    ```python
+    import os
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "Streamlit_app/tts_pdf_reader_key.json"
+    ```
+
+6. Launch the Streamlit application:
    ```bash
-   git clone https://github.com/harbingeroftrades/YouStock.AI.git
-   cd YouStock.AI
+   streamlit run Streamlit_app/youStocks.py
    ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Launch the Streamlit application:
-   ```bash
-   streamlit run youstock.py
-   ```
-4. Access the application through your web browser at `http://localhost:8501`.
+
+7. Access the application through your web browser at `http://localhost:8501`.
 
 
 For more detailed information, refer to the documentation within the repository. Happy investing!
@@ -37,18 +62,22 @@ For more detailed information, refer to the documentation within the repository.
 
 ## Streamlit UI Sample Images:
 
-![app_ss_001](<WhatsApp Image 2024-07-22 at 23.07.31_d1b40d9e.jpg>)
-![app_ss_002](<WhatsApp Image 2024-07-22 at 23.08.06_38ca9a0e.jpg>)
-![app_ss_003](<WhatsApp Image 2024-07-22 at 23.08.50_06e1d9ac.jpg>)
-![app_ss_004](<WhatsApp Image 2024-07-22 at 23.09.28_e970067c.jpg>)
-![app_ss_005](<WhatsApp Image 2024-07-22 at 23.10.12_497a260a.jpg>)
-![app_ss_006](<WhatsApp Image 2024-07-22 at 23.10.37_7e0134c4.jpg>)
-![app_ss_007](<WhatsApp Image 2024-07-22 at 23.11.36_e559053c.jpg>)
-![app_ss_008](<WhatsApp Image 2024-07-22 at 23.13.23_d9cbf611.jpg>)
-![app_ss_009](<WhatsApp Image 2024-07-22 at 23.13.58_34414e4d.jpg>)
+![app_ss_001](https://github.com/user-attachments/assets/20912536-0bcb-4c5e-9113-fd15cf0532d2)
+![app_ss_002](https://github.com/user-attachments/assets/f40afa83-8373-4c24-b5b7-0ff9c08af0b3)
+![app_ss_003](https://github.com/user-attachments/assets/c50a2cf8-e83b-4f4e-aeed-3d6a262cad87)
+![app_ss_004](https://github.com/user-attachments/assets/4df4fe36-dad5-4515-a292-1cc3f9e73663)
+![app_ss_005](https://github.com/user-attachments/assets/ee0c39fb-12ad-44e5-9f91-bb6b09261fde)
+![app_ss_006](https://github.com/user-attachments/assets/e6b51385-6606-45d0-9f63-1c3584fde606)
+![app_ss_007](https://github.com/user-attachments/assets/9c3f5e27-7e5c-4a4c-aa44-759eff3995b4)
+![app_ss_008](https://github.com/user-attachments/assets/657ffd40-239c-45bc-9d3e-89d77ae96a8e)
+![app_ss_009](https://github.com/user-attachments/assets/4807bd85-a36a-4d6c-8272-38b92a17e776)
+
 
 ## UI Demo Video:
-<!-- [![Here is the DEMO Video](https://github.com/Karthick-ng/Real-Time-Market-Insights/assets/116434132/1f6d8395-96f0-4d7f-8efe-42e9336ede0d)]() -->
+[![image](https://github.com/user-attachments/assets/be1c6cd2-ba13-45ac-9600-c5a387e8061e)
+](https://www.youtube.com/watch?v=k9dXR4if8Zs)
+
+Demo video link: [Click here!](https://www.youtube.com/watch?v=k9dXR4if8Zs)
 
 
 ## Project Overview
@@ -142,44 +171,20 @@ Combine Fundamental and Technical Analysis with sentiment analysis to enhance st
   - `cufflinks`
 
 
-## Getting Started
-
-1. Clone the repository.
-   ```bash
-   git clone [repository_url]
-   
-2. Move into project directory.
-    ```bash
-    cd Real-Time-Market-Insights
-    cd Streamlit_app
-
-3. Create a Virtual Environment and install Requirements.
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate  (on windows)
-    source venv/bin/activate (on MAC)
-  
-    pip install -r requirements.txt
-
-4. Run Streamlit code.
-   ```bash
-   streamlit run youstock.py
-
-
 ## Development Phase
 The development of YouStock.AI follows an iterative process, with continuous integration and continuous deployment (CI/CD) practices ensuring robust and seamless updates. The phases include:
 
 1. **Initial Setup and Data Collection:** Setting up the environment and gathering data from APIs like Alpha Vantage and Twitter API.
 2. **Data Processing and Analysis:** Utilizing Hadoop and Spark for big data processing, and performing sentiment analysis with spaCy, NLTK, and APIs like Google NLP and IBM Watson.
-3. **Model Development:** Developing machine learning models using TensorFlow and PyTorch, and implementing time series analysis with statsmodels and Prophet.
+3. **Model Development:** Developing machine learning models using TensorFlow and PyTorch, and implementing time series analysis with stats models and Prophet.
 4. **Risk Assessment and Stress Testing:** Conducting risk assessments and stress testing using PowerBi, MATLAB, and Monte Carlo simulations.
 5. **Automated Trading and Decision Support:** Integrating automated trading platforms like MetaTrader and NinjaTrader, and developing custom decision support systems.
 6. **Continuous Improvement:** Implementing CI/CD with Jenkins and GitLab, and monitoring performance with Splunk and New Relic.
 
 ## Dataset Information
-YouStock.AI utilizes datasets sourced from various reliable providers via APIs such as Alpha Vantage and Twitter API. Additionally, YouData.ai is used to enrich the datasets with high-quality, relevant financial data. This enables comprehensive analysis and more accurate predictive modeling.
+YouStock.AI utilizes datasets sourced from various reliable providers via APIs such as Alpha Vantage and Twitter API. Additionally, YouData.ai is used to enrich the datasets with high-quality, relevant financial data. This enables comprehensive analysis and more accurate predictive modelling.
 
-![Dataset ScreenShot](image.png)
+![Dataset ScreenShot](https://github.com/user-attachments/assets/f0f7d5a5-b66c-47c0-8623-b071d64525c6)
 
 [Database link here at YouData.AI](https://datalink.youdata.ai/yc597789)
 
